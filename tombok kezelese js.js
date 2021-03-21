@@ -4,7 +4,16 @@ function id(nev) {
     return document.getElementById(nev);
 }
 
+function init() {
+//var gomb=document.getElementById("gomb");
+    var gomb = id("gomb");
+    gomb.addEventListener("click", dolgozz, false);
+}
+
+var newtomb = [];
+var tomb2 = [];
 var tomb = [];
+
 function feltolt() {
     var kiir = id("kiir");
     var adat = id("adat");
@@ -20,14 +29,6 @@ function feltolt() {
     kiir.innerHTML += "<br>" + tomb.join("; ");
 }
 
-
-function init() {
-//var gomb=document.getElementById("gomb");
-    var gomb = id("gomb");
-    gomb.addEventListener("click", dolgozz, false);
-}
-
-
 function osszegzes() {
     var osszeg = 0;
     for (var i = 0; i < tomb.length; i++) {
@@ -37,25 +38,35 @@ function osszegzes() {
     osszegTxt.innerHTML = "Összeg: " + osszeg;
 }
 
-function paros() {
-var parosszam = 0;
-for (var i = 0; i < tomb.length; i++) {
-if (tomb[i] % 2 === 0)
-return parosszam[tomb[i]];
-}
-var parosszamok = ID("parosszam");
-parosszamok.innerHTML = "Páros számok: " + parosszam;
-}
 
-function forditottSorrend (){
-for (var i = tomb.length - 1; i >= 0; i--);
-}
+function ParosSzamok() {
+    var parosok =id("parosok");
+    var tomb2=[];
+    for (var i = 0; i < tomb.length; i++) {
+        if(tomb[i]%2===0)
+            tomb2[i]=tomb[i];
+    }
+    console.log(tomb2);
+    parosok.innerHTML ="A párosok: " + tomb2.join(" ");
+    }
 
+function forditottTomb () {
+    var fordTomb=id("forditva");
+    var newtomb=[];
+    for (var i = tomb.length-1; i>=0; i--){
+       newtomb[i]=tomb[i];
+    }
+    
+    console.log(newtomb);
+    fordTomb.innerHTML ="Tomb fordított sorrendben: " + newtomb.join(" ");
+    }
+   
 
 function dolgozz() {
    feltolt();
    osszegzes();
-   forditottSorrend(); 
+   ParosSzamok ();
+   forditottTomb ();
 }
 
 
