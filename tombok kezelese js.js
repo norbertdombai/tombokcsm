@@ -51,14 +51,13 @@ function ParosSzamok() {
     }
 
 function forditottTomb () {
-    var fordTomb=id("forditva");
+    var forditva=id("forditva");
     var newtomb=[];
-    for (var i = tomb.length-1; i>=0; i--){
-       newtomb[i]=tomb[i];
+    for (var i = tomb.length - 1; i>=0; i--){
+     newtomb.push(tomb[i]);
     }
-    
     console.log(newtomb);
-    fordTomb.innerHTML ="Tomb fordított sorrendben: " + newtomb.join(" ");
+    forditva.innerHTML ="Tomb fordított sorrendben: " + newtomb.join(" ");
     }
    
 
