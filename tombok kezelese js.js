@@ -59,6 +59,16 @@ function forditottTomb () {
     console.log(newtomb);
     forditva.innerHTML ="Tomb ford√≠tott sorrendben: " + newtomb.join(" ");
     }
+    
+    function ottelOszthato() {
+    var db=0;
+    for (var i = 0; i < tomb.length; i++) {
+        if(tomb[i]%5===0)
+            db++;
+    }
+    var dbTxt=id("darab");
+    dbTxt.innerHTML="Az ˆttel oszthatÛak sz·ma: "+db;
+}
    
 
 function dolgozz() {
@@ -66,6 +76,7 @@ function dolgozz() {
    osszegzes();
    ParosSzamok ();
    forditottTomb ();
+   ottelOszthato();
 }
 
 
